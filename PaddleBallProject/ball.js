@@ -12,13 +12,22 @@ function Ball(location, velocity, radius, col){
   this.col = col;
   this.acc = createVector(0,.1);
 // github test
+
   // calls other functions
   this.run = function(){
     this.checkEdges();
+    this.update();
     this.render();
+  }
+
+  this.update = function()}
     var mouseLoc = createVector(mouseX, mouseY);
     this.loc = p5.Vector.lerp(this.loc, mouseLoc, .09);
   }
+
+// returns a Vector
+this.vel.limit(3)
+this.loc.add(this.vel);
 
   //checkEdges() reverses speed when the ball touches an edge
   this.checkEdges = function(){
@@ -30,6 +39,7 @@ function Ball(location, velocity, radius, col){
   // render () draws ball at the new location
   this.render = function (){
     fill(this.col);
-    ellipse(this.loc.x,this.loc.y, this.rad, this.rad)
+    rect(this.loc.x,this.loc.y, this.w, this.l)
   }
 }
+// end of ball constructor function

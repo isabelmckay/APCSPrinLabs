@@ -1,15 +1,22 @@
 //  Global variables
 var boids = [];
-var chaser;
+var paddle;
 
 // setup code here
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  background(0, 0, 0);
-  loadBoids(100);
-  frameRate(60);// !!!!!!!!!! this is a function call
-  chaser = new Ball(createVector(width/2, height/2), createVector(1,2), 25, color(255,0,0));
+  background(20, 20, 20);
+  numBall = 10;
+  loadBalls(numBall);
+
+  // lerping paddle
+  var loc = createVector(400, 400);
+  var vel = createVector(0, 0);
+  var width = 5:
+  var length = 100;
+  var col = color(random(0, 255), random(0, 255), random(0,255))
+  paddle = new Paddle(loc, vel, width, length, col);
 }
 
 // run chaser
@@ -35,7 +42,7 @@ function draw() {
 
 
 
-
+// hi this is a change
 
  // creating boids
 function loadBoids(numBoid){
