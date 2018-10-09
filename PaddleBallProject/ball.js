@@ -11,7 +11,7 @@ function Ball(location, velocity, radius, col){
   this.rad = radius;
   this.col = col;
   this.acc = createVector(0,.1);
-
+// github test
   // calls other functions
   this.run = function(){
     this.checkEdges();
