@@ -1,16 +1,16 @@
 /*
-** Boid Constructor Function
+** Paddle Constructor Function
 ** Isabel McKay
 ** Aug 21, 2018
 */
 
-function Boid(location, velocity, radius, col){
+function Paddle(loc, vel, width, length, col){
 	// instance variables
-	this.loc = location;
-	this.vel = velocity;
-	this.rad=radius;
+	this.loc = loc;
+	this.vel = vel;
+	this.w = width;
+	this.l = length;
 	this.col = col;
-	this.acc = createVector(0,.1);
 
 // calls other functions
 this.run = function(){
@@ -18,30 +18,23 @@ this.run = function(){
 	this.update();
 	this.render();
 }
-// changes the location of the ball
-// by adding speed to x and y
+// lerping
 this.update = function(){
-
-	this.loc.add(this.vel);
+// lerping to middle of rect
+paddleLength = width/2
+	this.loc.x = lerp(this.loc.x, mouseX-paddleLength, .15);
 }
-
- //checkEdges() reverses speed when ball touches
+ //checkEdges() reverses speed when rect touches edge
 this.checkEdges = function(){
 	if(this.loc.x < 0) this.vel.x = -this.vel.x;
 	if(this.loc.x > width) this.vel.x = -this.vel.x;
   if(this.loc.y < 0) this.vel.y = -this.vel.y;
   if(this.loc.y > height) this.vel.y = -this.vel.y;
-
 }
 
-// render() draws ball at the new location
+// render() draws paddle at the new location
    this.render = function(){
-		 fill(this.col); // pushing the current coord system into the stack
-		 push();
-		     translate(this.loc.x, this.loc.y);
-		     rotate(0.4);
-		     triangle(-5, 0, 5, 0, 0, -15);
-     pop()  //  restoring coordianate system from the stack
+		 fill(this.col);
+rect(this.loc.x, this.loc.y, this.w, this.l);
    }
-
 }
