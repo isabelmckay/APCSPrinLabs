@@ -1,1 +1,7 @@
-hi
+girl
+boy
+happy
+ sunshine, rain, summer, winter, fall
+boy, summer, sunshine, rain, happy, girl, fall, winter
+sunshine, rain, winter, boy, happy, fall, girl, summer
+summer, happy, girl, winter, boy, rain, fall, sunshine
