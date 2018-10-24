@@ -6,34 +6,36 @@ function preload(){
   txt = loadStrings("words.txt");
 }
 function setup() {
-  var cnv = createCanvas(800, 800);
-  cnv.position((windowWidth-width)/2, 30);
-  background(0, 0, 0);
+noCanvas();
+console.log("before bubble sorting ");
+console.log(txt);
 myBubbleSort(txt);
+console.log("after bubble sorting");
+console.log(txt);
 }
 
-// fill in tomorrow with help
+// sorting function
 function myBubbleSort(){
-  // maybe the started code?
-  for(var i = nums.length - 1; i >= 1; i-- ){
-    for(var j = 0; j < nums.length; j++ ){
+  for(var i = txt.length - 1; i >= 1; i-- ){
+    for(var j = 0; j < txt.length; j++ ){
+      // defining i and j
+      right_element = txt[i];
+      left_element = txt[j];
+      // if statement states when they should swap
+if(right_element< left_element){
+  // calling swap function
+  swap(i, j);
+}
 
 }
 
 
 }
-// or this?
-    swapped = false
-    for
-    if  then
-    swap
-    swapped = true
-    if
-    for
+}
 
-// what is going on
-function swap(nums, a, b){
-   var temp = nums[a];
-   nums[a] = nums[b];
-   nums[b] = temp
-)
+// function that swaps the words
+function swap(i, j){
+   var temp = txt[i];
+   txt[i] = txt[j];
+   txt[j] = temp
+}
