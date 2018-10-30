@@ -16,9 +16,11 @@ mySelectSort()
 
 for(var i = 0; i <= 255; i++) { // fill strokes
 var color = 'rgb(100, ' + i + ', ' + i + ')';
-function Bar(location, velocity, radius, col){
+
+function colorbar(location, velocity, radius, clrAvg){
   // Instance Variables
-  this.loc = location;
+  this.loc = loc;
+  this.w = w;
   this.vel = velocity;
   this.rad = radius;
   this.col = col;
