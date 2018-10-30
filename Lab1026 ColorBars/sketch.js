@@ -1,6 +1,6 @@
-// setup code here
-var Bars = []
 
+var Bars = []
+// setup code here
 function setup(){
   var cnv = create Canvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);

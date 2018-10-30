@@ -1,26 +1,24 @@
 /*
-** Ball Constructor Function
+** Bar Constructor Function
 ** Isabel McKay
 ** Aug 21, 2018
 */
 
-
-myBubbleSort()]
-console.log("after bubble sorting");
-console.log(txt);
-}
-
-mySelectSort()
-
-
-
-for(var i = 0; i <= 255; i++) { // fill strokes
-var color = 'rgb(100, ' + i + ', ' + i + ')';
-
-function colorbar(location, velocity, radius, clrAvg){
+function colorbar(loc, w, h, clr, clrAvg){
   // Instance Variables
   this.loc = loc;
   this.w = w;
-  this.vel = velocity;
-  this.rad = radius;
-  this.col = col;
+  this.h = h;
+  this.clr = clr;
+  this.clrAvg = clrAvg;
+
+this.run = function(){
+  this.render();
+}
+
+this.render = function(){
+  fill(this.clr);
+  rect(this.loc.x, this. loc.y, this.w, this.h);
+}
+
+}
