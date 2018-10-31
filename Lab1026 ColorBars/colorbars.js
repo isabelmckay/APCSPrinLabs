@@ -4,6 +4,7 @@
 ** Aug 21, 2018
 */
 
+// adding variables for the colorbar
 function colorbar(loc, w, h, clr, clrAvg){
   // Instance Variables
   this.loc = loc;
