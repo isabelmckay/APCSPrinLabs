@@ -22,6 +22,7 @@ function draw() {
   }
 }
 
+// testng that all my code isnt lostttt
 // adding variables for the bars colors
 function loadBars(numBars){
   for(var i = 0; i < numBars; i++){
