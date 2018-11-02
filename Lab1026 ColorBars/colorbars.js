@@ -1,17 +1,25 @@
 /*
-** Ball Constructor Function
+** Bar Constructor Function
 ** Isabel McKay
 ** Aug 21, 2018
 */
 
-myBubbleSort()]
-
-mySelectSort()
-
-function Ball(location, velocity, radius, col){
+// adding variables for the colorbar
+function colorbar(loc, w, h, clr, clrAvg){
   // Instance Variables
-  this.loc = location;
-  this.vel = velocity;
-  this.rad = radius;
-  this.col = col;
-  this.acc = createVector(0,.1);
+  this.loc = loc;
+  this.w = w;
+  this.h = h;
+  this.clr = clr;
+  this.clrAvg = clrAvg;
+
+this.run = function(){
+  this.render();
+}
+
+this.render = function(){
+  fill(this.clr);
+  rect(this.loc.x, this. loc.y, this.w, this.h);
+}
+
+}
