@@ -1,3 +1,5 @@
+// Isabel McKay
+
 // global variables
 var data = [];
 
@@ -9,24 +11,25 @@ function preload(){
 
   function setup(){
   noCanvas();
-  bubblesort(data);
-  console.log(data.population);
+  bubbleSort(data);
+  console.log(data.countrydata)
 }
 
 function draw(){
 }
 
-  function bubbleSort(){
+  function bubbleSort(data){
     var length = data.length
     for(var i = 0; i < length; i++){
       for(var j = 0; j < (length - i - 1); j++){
-        var a = data[j].population.high
-        var b = data[j+1].population.high
-        if(a > b){
-          var temp = data[j]
-          data[j] = data[j+1]
+        var a = data[j].countrydata.country;
+        var b = data[j+1].countrydata.country;
+        if(data[j] > dat[j+1]){
+          // swapping numbers
+          // temp variable
+          var temp = data[j];
+          data[j] = data[j+1];
           data[j+1] = temp;
-
         }
       }
     }
