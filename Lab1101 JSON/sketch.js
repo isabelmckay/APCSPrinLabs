@@ -1,23 +1,31 @@
 // Isabel McKay
+// JSON Lab
+// 12 November 2018
 
 // global variables
 var data = [];
 
-//setup code
+// loading JSON file data
 function preload(){
   data = loadJSON("population.json");
-//  console.log(data);
+// console.log(data);
+// ^^ potential usage?
 }
 
+//setup code
   function setup(){
   noCanvas();
   bubbleSort(data);
   console.log(data.countrydata)
 }
 
+// ask for help
+// how do I make a bar graph??
 function draw(){
+  // bar graph function here
 }
 
+// bubble sort function
   function bubbleSort(data){
     var length = data.length
     for(var i = 0; i < length; i++){
@@ -34,3 +42,4 @@ function draw(){
       }
     }
   }
+  // end of sketch.js
