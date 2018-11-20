@@ -1,30 +1,29 @@
 /*
-** ketch
+** sketch
 ** Isabel McKay
 ** Nov 19, 2018
 */
 
 // global varialbles
-var w = 20;
-var cols, rows;
+var scl = 20;
+var food;
 var snake;
 // set score = 0
 
 // setup code here
 function setup() {
-  var cnv = createCanvas(800, 800);
-  cols = width/w;
-  rows = height/w;
-  cnv.position((windowWidth-width)/2, 30);
+createCanvas(800, 800);
+snake = new Snake();
+food = new Food();
 frameRate(100);
-  background(20, 20, 20);
-snake = new Snake(createVector(width/2, height/2), createVector(1, 0));
 }
 
 // draw function
 function draw() {
+  background(0,0,150);
 snake.run();
-food.run();
+snake.draw();
+food.draw();
 // if tangled, call NewGame()
 // if snake gets food call start new round()
 }
@@ -46,6 +45,8 @@ snake.vel = createVector(-1, 0);
 if(keyCode === RIGHT_ARROW)
 snake.vel = createVector(1, 0);
 }
+
+
 
 //function run // call update and render
 
