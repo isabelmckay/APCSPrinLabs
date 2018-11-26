@@ -15,15 +15,16 @@ function setup() {
 createCanvas(800, 800);
 snake = new Snake();
 food = new Food();
-frameRate(100);
+frameRate(10);
 }
 
 // draw function
 function draw() {
-  background(0,0,150);
-snake.run();
-snake.draw();
-food.draw();
+  background(5, 5, 5);
+  snake.eat(food);
+  snake.move();
+  snake.draw();
+  snake.draw();
 // if tangled, call NewGame()
 // if snake gets food call start new round()
 }
@@ -35,6 +36,7 @@ food.draw();
 
 function keyPressed(){
   text(keyCode);
+
   // determines how arrows effect loc
 if(keyCode === UP_ARROW)
 snake.vel = createVector(0,-1);
@@ -44,6 +46,18 @@ if(keyCode === LEFT_ARROW)
 snake.vel = createVector(-1, 0);
 if(keyCode === RIGHT_ARROW)
 snake.vel = createVector(1, 0);
+}
+
+function cols(){
+  return floor(width/scl);
+}
+
+function rows(){
+    return floor(height/scl);
+}
+
+function returnVector(){
+  return createVector(floor(random(cols())), floor(random(rows()));
 }
 
 
