@@ -4,11 +4,10 @@
 ** Nov 19, 2018
 */
 
-function Snake(){
-  this.x = cols()/2*scl;
-  this.y = rows()/2*scl;
+function Snake(loc, vel, status){
   this.loc = loc; // vector = location of head
   this.vel = vel; // vector = direction of movement
+    this.status = status;
 // body = array of segments
 
 this.run = function(){
@@ -28,8 +27,8 @@ this.update = function(){
 
 this.render = function(){
   // global var w and header height(for loop)
-  fill(0, 255, 0); // snake color
-  rect(this.loc.x, this.loc.y, variables[0], variables[0]);//shape of snake
+  fill(255, 255, 255); // snake color
+  rect(this.loc.x, this.loc.y, w, w);//shape of snake
 }
 }
 // tangles Function
