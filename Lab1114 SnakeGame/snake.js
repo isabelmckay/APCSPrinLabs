@@ -7,29 +7,37 @@
 function Snake(loc, vel){
   this.loc = loc; // vector = location of head
   this.vel = vel; // vector = direction of movement
-// body = array of segments
+  this.segments = [];
+  this.segments.push(createVector(0, 0));
 
-this.run = function(){
-  // update and render(draw)
-  this.update();
-  this.render();
-}
+  // body = array of segments
 
-this.update = function(){
-  // velocity, headerheight?
-///this.vel.mult(w);
-  this.loc.add(this.vel);
-  this.loc.x = constrain(this.loc.x, 0, width-w);
-  this.loc.y = constrain(this.loc.y, 0, height-w);
-///  this.loc.y = constrain(this.loc.y, 0, height-w);
-}
+  this.run = function(){
+    // update and render(draw)
+    this.update();
+    this.render();
+  }
+
+  this.update = function(){
+    // velocity, headerheight?
+    ///this.vel.mult(w);
+    this.segments[0].x = this.loc.x;
+    this.segments[0].y = this.loc.y;
+    this.loc.add(this.vel);
+    this.loc.x = constrain(this.loc.x, 0, width-w);
+    this.loc.y = constrain(this.loc.y, 0, height-w);
+    ///  this.loc.y = constrain(this.loc.y, 0, height-w);
+  }
 
 
-this.render = function(){
-  // global var w and header height(for loop)
-  fill(244, 66, 152); // snake color
-  rect(this.loc.x, this.loc.y, w, w);//shape of snake
-}
+  this.render = function(){
+    // global var w and header height(for loop)
+    for(var i = 0; i < this.segments.length; i++){
+      rect(this.segments[i].x, this.segments[i].y, w, w);
+    }
+    fill(244, 66, 152); // snake color
+    rect(this.loc.x, this.loc.y, w, w);//shape of snake
+  }
 }
 // tangles Function
 //call AFTER update
