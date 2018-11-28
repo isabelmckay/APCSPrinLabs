@@ -27,7 +27,7 @@ this.update = function(){
 
 this.render = function(){
   // global var w and header height(for loop)
-  fill(0, 255, 0); // snake color
+  fill(244, 66, 152); // snake color
   rect(this.loc.x, this.loc.y, w, w);//shape of snake
 }
 }

@@ -7,7 +7,6 @@
 // global varialbles
 var w = 20;
 var cols, rows;
-var segments = [];
 var snake;
 var food;
 var locX;
@@ -65,7 +64,7 @@ function foodPosition(){
   var randomX = Math.random() * 800;
   locX = randomX - (randomX%20);
   var randomY = Math.random() * 800;
-  locX = randomY - (randomY%20);
+  locY = randomY - (randomY%20);
 }
 
   // determines how arrows effect lo

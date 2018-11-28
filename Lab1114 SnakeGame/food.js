@@ -11,7 +11,7 @@ function Food(xLocation, yLocation){
   this.run = function(){
     this.render(this.locX, this.locY);
   }
-  
+
 
   this.render = function(xLocation, yLocation){
     fill(255, 0, 0);// food color
