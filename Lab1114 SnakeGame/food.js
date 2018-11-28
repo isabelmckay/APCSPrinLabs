@@ -5,23 +5,16 @@
 */
 
 // basis of food creation
-function Food(){
-  this.vec = randomVector().mult(scl);
-
-  this.x = function(){
-    return this.vec.x;
+function Food(xLocation, yLocation){
+  this.xLocation = xLocation;
+  this.yLocation = yLocation;
+  this.run = function(){
+    this.render(this.locX, this.locY);
   }
+  
 
-  this.y = function(){
-    return this.vec.y;
+  this.render = function(xLocation, yLocation){
+    fill(255, 0, 0);// food color
+    rect(xLocation, yLocation, w, w); // new location
   }
-
-  this.draw = function(){
-    fill(255, 255, 255);// food color
-    rect(this.x(), this.y(), scl, scl); // new location
-}
-this.eaten = function(){
-  this.vec = randomVector().mult(scl);
-}
-
 }
