@@ -35,9 +35,9 @@ function Snake(loc, vel){
     // global var w and header height(for loop)
     for(var i = 0; i < this.segments.length; i++){
       rect(this.segments[i].x, this.segments[i].y, w, w);
-      this.segments[0].push
+    ///  this.segments.push(createVector(this.segments[i].x, this.segments[i].y));
     }
-    fill(255, 0, 0); // snake color
+    fill(0, 255, 255); // snake color
     rect(this.loc.x, this.loc.y, w, w);//shape of snake
   }
 }
