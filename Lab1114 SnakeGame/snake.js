@@ -4,6 +4,7 @@
 ** Nov 19, 2018
 */
 
+// i have to make the snake grow
 function Snake(loc, vel){
   this.loc = loc; // vector = location of head
   this.vel = vel; // vector = direction of movement
@@ -34,9 +35,9 @@ function Snake(loc, vel){
     // global var w and header height(for loop)
     for(var i = 0; i < this.segments.length; i++){
       rect(this.segments[i].x, this.segments[i].y, w, w);
-      fill(244, 66, 152);//segment color
+      this.segments[0].push
     }
-    fill(244, 66, 152); // snake color
+    fill(255, 0, 0); // snake color
     rect(this.loc.x, this.loc.y, w, w);//shape of snake
   }
 }
