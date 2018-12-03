@@ -14,7 +14,7 @@ function Food(xLocation, yLocation){
 
 
   this.render = function(xLocation, yLocation){
-    fill(12, 255, 0);// food color- why does it match my segment??
+    fill(0, 0, 0);// food color- why does it match my segment??
     rect(xLocation, yLocation, w, w); // new location
   }
 }

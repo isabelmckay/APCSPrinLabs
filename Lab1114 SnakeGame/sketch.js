@@ -21,15 +21,15 @@ cols = width/w;
 rows = height/w;
 food = new Food();
 snake = new Snake(createVector(width/2, height/2), createVector(0,0));
-background(239, 134, 201);
+background(135, 255, 181);
 fill(200, 30, 150);
-frameRate(20);
+frameRate(10);
 }
 
 // draw function
 foodPosition();
 function draw(){
-  background(239, 134, 201);
+  background(135, 255, 181);
   snake.run();
   food.render(locX, locY);
   if(snake.loc.x == locX && snake.loc.y == locY){
