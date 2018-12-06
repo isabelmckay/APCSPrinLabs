@@ -30,16 +30,17 @@ frameRate(10);
 // draw function
 foodPosition();
 function draw(){
-  background(135, 255, 181);
+  background(random(255,0), random(255,0), random(255,0));
   //score
   fill(255, 0, 0);
-  text("your score" + score, 380, 50);
+  text("your score: " + score, 380, 50);
   Score();
   snake.run();
   food.render(locX, locY);
   if(snake.loc.x === locX && snake.loc.y === locY){
     foodPosition();
   snake.segments.push(createVector(0, 0));
+  score=score+1;
 // if tangled, call NewGame()
 // if snake gets food call start new round()
 }
@@ -48,7 +49,7 @@ function draw(){
 function Score(){
   if (score > 3);
   fill(255, 0, 0);
-  text("DON'T LOSE", 300, 40);
+///  text("DON'T LOSE", 380, 40);
 }
 
 // tangled Function// function start new background

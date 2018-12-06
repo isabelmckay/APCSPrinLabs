@@ -43,10 +43,10 @@ this.loc.y = constrain(this.loc.y, 0, height-w);
 
   this.render = function(){
     // global var w and header height(for loop)
-    fill(255, 255, 255);// snake color
+  fill(120, 16, 345);// snake color
     for(var i = 0; i < this.segments.length; i++){
       rect(this.segments[i].x, this.segments[i].y, w, w);
-      fill(255, 255, 255);
+      fill(120, 16, 345);
     }
 
     rect(this.loc.x, this.loc.y, w, w);//shape of snake
