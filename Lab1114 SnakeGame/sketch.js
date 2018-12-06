@@ -40,7 +40,7 @@ function draw(){
   if(snake.loc.x === locX && snake.loc.y === locY){
     foodPosition();
   snake.segments.push(createVector(0, 0));
-  score=score+1;
+  score = score + 1;
 // if tangled, call NewGame()
 // if snake gets food call start new round()
 }
