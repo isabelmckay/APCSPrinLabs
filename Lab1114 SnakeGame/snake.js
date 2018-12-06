@@ -46,6 +46,7 @@ this.loc.y = constrain(this.loc.y, 0, height-w);
     fill(255, 255, 255);// snake color
     for(var i = 0; i < this.segments.length; i++){
       rect(this.segments[i].x, this.segments[i].y, w, w);
+      fill(255, 255, 255);
     }
 
     rect(this.loc.x, this.loc.y, w, w);//shape of snake
