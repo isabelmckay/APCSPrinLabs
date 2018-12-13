@@ -6,10 +6,12 @@
 
 // i have to make the snake grow
 function Snake(loc, vel){
+  // instance variables
   this.loc = loc; // vector = location of head
   this.vel = vel; // vector = direction of movement
   this.segments = [];
   this.segments.push(createVector(0, 0));
+  this.status = "false";
 
   // body = array of segments
 
@@ -17,6 +19,7 @@ function Snake(loc, vel){
     // update and render(draw)
     this.update();
     this.render();
+    this.tangled();
   }
 
   this.update = function(){
@@ -50,6 +53,19 @@ this.loc.y = constrain(this.loc.y, 0, height-w);
     }
 
     rect(this.loc.x, this.loc.y, w, w);//shape of snake
+  }
+
+  //dying
+  this.tangled = function(){
+    for(var i = 0; i < this.segments.length; i++){
+      var distX = this.loc.x - this.segments[i].x;
+      var distY = this.loc.y - this.segments[i].y;
+      if((distX == 0) && (distY == 0)){
+        this.status = "true";
+        console.log(this.status);
+        deadGame();
+      }
+    }
   }
 }
 // tangles Function

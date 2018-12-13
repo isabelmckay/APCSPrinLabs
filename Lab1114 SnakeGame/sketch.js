@@ -12,6 +12,7 @@ var food;
 var locX;
 var locY;
 var score = 0;
+var start = "true";
 // set score = 0
 
 // setup code here
@@ -25,12 +26,14 @@ snake = new Snake(createVector(width/2, height/2), createVector(0,0));
 background(135, 255, 181);
 fill(200, 30, 150);
 frameRate(10);
+textAlign(CENTER, CENTER);
 }
 
 // draw function
 foodPosition();
 function draw(){
-  background(random(255,0), random(255,0), random(255,0));
+  background(66, 229, 244);
+
   //score
   fill(255, 0, 0);
   text("your score: " + score, 380, 50);
@@ -44,6 +47,36 @@ function draw(){
 // if tangled, call NewGame()
 // if snake gets food call start new round()
 }
+deadGame();
+gameStart();
+}
+function loadSnake(){
+  var loc = createVector(200, 200);
+  var vel = createVector(0, 0);
+  snake = new Snake(loc, vel);
+}
+function deadGame(){
+  if(snake.status == "true"){
+    snake = 0;
+    score = 0;
+    // game over
+    text("wow you lost", 400, 400);
+    loadSnake();
+    gameStart();
+
+  }
+}
+function gameStart(){
+  if(start == "true"){
+    textFont();
+    fill(0, 0, 0);
+    textAlign(CENTER);
+    textSize(100);
+    text("ARE YOU READY", 400, 300);
+    textSize(25);
+    text("Press up arrow to start", 400, 550);
+    fill(207, 130, 255);
+  }
 }
 
 function Score(){
@@ -58,9 +91,12 @@ function Score(){
 // score=0
 
 function keyPressed(){
+text(keyCode)
+if(keyCode === UP_ARROW){
+  start = "false"
+  snake.vel = createVector(0,-20);
+}
 
-if(keyCode === UP_ARROW)
-snake.vel = createVector(0,-20);
 
 if(keyCode === DOWN_ARROW)
 snake.vel = createVector(0,20);
