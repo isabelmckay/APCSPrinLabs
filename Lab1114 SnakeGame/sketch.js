@@ -60,7 +60,7 @@ function deadGame(){
     snake = 0;
     score = 0;
     // game over
-    text("wow you lost", 400, 400);
+    text("YOU LOSE", 400, 400);
     loadSnake();
     gameStart();
 
@@ -74,7 +74,7 @@ function gameStart(){
     textSize(100);
     text("ARE YOU READY", 400, 300);
     textSize(25);
-    text("Press up arrow to start", 400, 550);
+    text("Press the up arrow to start", 400, 550);
     fill(207, 130, 255);
   }
 }
