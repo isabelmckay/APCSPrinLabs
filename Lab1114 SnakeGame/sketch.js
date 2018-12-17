@@ -25,7 +25,9 @@ food = new Food();
 snake = new Snake(createVector(width/2, height/2), createVector(0,0));
 background(135, 255, 181);
 fill(200, 30, 150);
+//how fast snake is going
 frameRate(10);
+// where the text appears
 textAlign(CENTER, CENTER);
 }
 
@@ -41,6 +43,7 @@ function draw(){
   snake.run();
   food.render(locX, locY);
   if(snake.loc.x === locX && snake.loc.y === locY){
+    //calling food position
     foodPosition();
   snake.segments.push(createVector(0, 0));
   score = score + 1;
@@ -55,6 +58,7 @@ function loadSnake(){
   var vel = createVector(0, 0);
   snake = new Snake(loc, vel);
 }
+// dying snake
 function deadGame(){
   if(snake.status == "true"){
     snake = 0;
@@ -66,19 +70,22 @@ function deadGame(){
 
   }
 }
+// start screen shows
 function gameStart(){
   if(start == "true"){
     textFont();
     fill(0, 0, 0);
     textAlign(CENTER);
     textSize(100);
+    // starter screen
     text("ARE YOU READY", 400, 300);
     textSize(25);
+    // instruction
     text("Press the up arrow to start", 400, 550);
     fill(207, 130, 255);
   }
 }
-
+//score
 function Score(){
   if (score > 3);
   fill(255, 0, 0);
@@ -89,7 +96,7 @@ function Score(){
 
 // function NewGame
 // score=0
-
+// tells how the snake moves
 function keyPressed(){
 text(keyCode)
 if(keyCode === UP_ARROW){
